@@ -8,17 +8,17 @@ var plays=0;
 var pickedWords=[];
 var pickedLetters=[];
 var guesses=10;
-var words=["Radiohead","Red Hot Chilli Peppers","Nirvana","Pearl Jam","Weezer","Green Day","Coldplay","Foo Fighters","Muse","The Killers","Artic Monkeys","The Strokes","No Doubt","Arcade Fire"]
+var words=["Salad","Tomato","Nirvana", "Florian"]
 
 function start(){
-    CFonts.say("alt bands\nhangman", {
+    CFonts.say("hangman", {
         font: 'simple',   
-        colors: ['magentaBright'], 
+        colors: ['whiteBright'], 
     });
     inquirer.prompt([
         {
             type: "confirm",
-            message: "Would you like to play Alternative Bands Hangman?",
+            message: "Would you like to play Hangman?",
             name: "confirm",
             default: true
         },
@@ -119,22 +119,22 @@ function win(){
     newWord.displayWord();
     CFonts.say("congrats!\nyou won!", {
         font: 'simple',   
-        colors: ['magenta'], 
+        colors: ['white'], 
     });
     if(plays===1){
-        console.log("You've reached Rock Novice Level!\n")
+        console.log("You've reached Level 1!\n")
     }
     if(plays===2){
-        console.log("You've reached Rock Enthusiast Level!\n")
+        console.log("You've reached Level 2!\n")
     }
     if(plays===3){
-        console.log("You've reached Rock Roadie Level!\n")
+        console.log("You've reached Level 3!\n")
     }
     if(plays<4){
         playAgain()
     }
     else{
-        CFonts.say("rock master\nlevel", {
+        CFonts.say("\nlevel 4", {
             font: 'simple',   
             colors: ['cyan'], 
         });
@@ -173,9 +173,9 @@ function playAgain(){
 
 function restart(){
     CFonts.say("GAME OVER", {
-        font: 'chrome', 
+        font: 'simple', 
         align: 'left',  
-        colors: ['magenta','magenta'], 
+        colors: ['white','white'], 
     });
     inquirer.prompt([
         {
@@ -183,7 +183,7 @@ function restart(){
             message: CFonts.say("Would you like to start again?", {
                 font: 'console', 
                 align: 'left',  
-                colors: ['magenta'], 
+                colors: ['white'], 
             }),
             name: "confirm",
             default: true
